@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Guideline 3.1.1 — IAP Requirement | GooseAI</title>
+<meta name="description" content="The most expensive rejection in the App Store. We break down what triggers it, how Apple's reviewers interpret 3.1.1, what to remove from your iOS build, and the exact appeal letter that gets cleared." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* ============ QApilot Design System v1.0 ============ */
+  /* Brand navy — identity, marketing CTAs, dark hero */
+  --qp-navy-50:  #F0F4FB;
+  --qp-navy-100: #DCE5F4;
+  --qp-navy-200: #B5C4E5;
+  --qp-navy-300: #7E94CC;
+  --qp-navy-500: #2E4FA0;
+  --qp-navy-700: #1A2B6B;
+  --qp-navy-800: #131F4E;
+  --qp-navy-900: #0E1838;
+  /* Brand blue — primary action */
+  --qp-blue-50:  #EFF6FF;
+  --qp-blue-100: #DBEAFE;
+  --qp-blue-200: #BFDBFE;
+  --qp-blue-300: #93C5FD;
+  --qp-blue-500: #2D7BF4;
+  --qp-blue-600: #1E64DA;
+  --qp-blue-700: #1850B5;
+  /* Accent teal — secondary links */
+  --qp-teal-500: #14B8A6;
+  --qp-teal-600: #0D9488;
+  /* Status */
+  --qp-green-500: #10B981;
+  --qp-green-100: #D1FAE5;
+  --qp-amber-500: #F59E0B;
+  --qp-amber-100: #FEF3C7;
+  --qp-red-500:   #EF4444;
+  --qp-red-100:   #FEE2E2;
+  /* Neutral */
+  --qp-gray-25:  #FCFCFD;
+  --qp-gray-50:  #F8FAFC;
+  --qp-gray-100: #F1F5F9;
+  --qp-gray-200: #E5E9F0;
+  --qp-gray-300: #CBD5E1;
+  --qp-gray-400: #94A3B8;
+  --qp-gray-500: #64748B;
+  --qp-gray-700: #334155;
+  --qp-gray-800: #1E293B;
+  --qp-gray-900: #0F172A;
+
+  /* ============ Semantic tokens ============ */
+  --color-surface-page:    var(--qp-gray-50);
+  --color-surface-raised:  #FFFFFF;
+  --color-surface-sunken:  var(--qp-gray-100);
+  --color-surface-dark:    var(--qp-navy-900);
+  --color-text-primary:    var(--qp-gray-900);
+  --color-text-secondary:  var(--qp-gray-700);
+  --color-text-tertiary:   var(--qp-gray-500);
+  --color-text-on-dark:    #FFFFFF;
+  --color-border-subtle:   var(--qp-gray-200);
+  --color-border-strong:   var(--qp-gray-300);
+  --color-action:          var(--qp-blue-500);
+  --color-action-hover:    var(--qp-blue-600);
+  --color-action-soft:     var(--qp-blue-100);
+  --color-marketing-cta:   var(--qp-navy-800);
+
+  /* ============ Legacy GooseAI aliases (mapped to new tokens) ============ */
+  --cream:        var(--color-surface-page);
+  --cream-2:      var(--color-surface-sunken);
+  --paper:        var(--color-surface-raised);
+  --coffee:       var(--color-text-primary);
+  --coffee-2:     var(--qp-navy-900);
+  --ink:          var(--color-text-primary);
+  --mute:         var(--color-text-secondary);
+  --mute-2:       var(--color-text-tertiary);
+  --line:         var(--color-border-subtle);
+  --coral:        var(--color-action);
+  --coral-2:      var(--color-action-hover);
+  --coral-soft:   var(--color-action-soft);
+  --green:        var(--qp-green-500);
+  --green-soft:   var(--qp-green-100);
+  --success:      var(--qp-green-500);
+
+  --radius:12px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(248,250,252,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:34px;height:34px;border-radius:8px;background:var(--coral);color:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.brand-name{font-weight:800;font-size:17px;color:var(--coffee)}
+.nav-links{display:flex;gap:30px;color:var(--mute);font-size:14px;font-weight:500}
+.nav-links a.active{color:var(--coffee)}
+.nav-links a:hover{color:var(--coffee)}
+.nav-cta{background:var(--coral);color:#fff;padding:11px 22px;border-radius:999px;font-weight:600;font-size:14px}
+
+/* Article */
+.article-page{max-width:760px;margin:0 auto;padding:48px 28px 80px}
+.crumb{font-size:12px;color:var(--mute);margin-bottom:16px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.crumb a{color:var(--coral);font-weight:700}
+.gline-num{display:inline-block;background:var(--coral-soft);color:var(--coral);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.05em;margin-bottom:16px}
+.article-page h1{font-size:clamp(30px,4vw,46px);line-height:1.1;letter-spacing:-.02em;font-weight:800;margin-bottom:20px;color:var(--coffee)}
+.article-page h1 .accent{font-family:'Inter',sans-serif;font-style:italic;color:var(--coral);font-weight:400}
+.article-meta{color:var(--mute);font-size:13px;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.article-page h2{font-size:24px;font-weight:800;color:var(--coffee);margin:40px 0 12px;letter-spacing:-.01em}
+.article-page h3{font-size:18px;font-weight:700;color:var(--coffee);margin:28px 0 10px}
+.article-page p{color:var(--coffee);font-size:16px;line-height:1.7;margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 16px 20px;color:var(--coffee)}
+.article-page li{font-size:16px;line-height:1.7;margin-bottom:6px}
+.article-page strong{color:var(--coffee);font-weight:700}
+.article-page em{font-style:italic}
+.apple-quote{background:#fff;border-left:4px solid var(--coral);border-radius:0 12px 12px 0;padding:20px 24px;margin:24px 0;font-family:'Cambria',serif;font-style:italic;color:var(--coffee);font-size:15px;line-height:1.7;box-shadow:0 2px 8px rgba(15,23,42,.04)}
+.apple-quote .from{font-family:'Inter',sans-serif;font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:700;display:block;margin-bottom:10px}
+.appeal-box{background:var(--cream-2);border-radius:12px;padding:24px;margin:24px 0;font-family:'Cambria',serif;font-style:italic;color:var(--coffee);font-size:14px;line-height:1.7}
+.appeal-box .label{font-family:'Inter',sans-serif;font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:700;display:block;margin-bottom:12px}
+.tip-box{background:var(--coffee);color:var(--cream);border-radius:12px;padding:24px;margin:32px 0}
+.tip-box .label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);font-weight:700;display:block;margin-bottom:10px}
+.tip-box h4{font-size:17px;font-weight:700;color:var(--cream);margin-bottom:8px}
+.tip-box p{color:rgba(241,245,249,.85);font-size:14px;line-height:1.6;margin-bottom:8px}
+.tip-box .btn{display:inline-block;margin-top:12px;background:var(--coral);color:#fff;padding:10px 20px;border-radius:999px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;font-style:normal}
+.article-cta{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;margin-top:48px;text-align:center}
+.article-cta h3{font-size:20px;font-weight:800;color:var(--coffee);margin-bottom:6px}
+.article-cta h3 .accent{font-family:'Inter',sans-serif;font-style:italic;color:var(--coral);font-weight:400}
+.article-cta p{color:var(--mute);font-size:14px;margin-bottom:18px}
+.article-cta .btn{background:var(--coral);color:#fff;padding:14px 26px;border-radius:999px;font-weight:600;font-size:14px;display:inline-block}
+.related{margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
+.related h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:700;margin-bottom:14px}
+.related a{display:block;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:8px;color:var(--coffee);font-weight:600;font-size:14px;transition:border-color .15s ease}
+.related a:hover{border-color:var(--coral)}
+.related a .tag{display:inline-block;background:var(--coral-soft);color:var(--coral);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:8px;vertical-align:middle}
+code.inline{background:var(--cream-2);color:var(--coffee);padding:1px 6px;border-radius:4px;font-family:Monaco,Consolas,monospace;font-size:13px;border:1px solid var(--line)}
+
+/* Footer */
+footer{background:var(--coffee-2);color:var(--cream);padding:48px 28px 32px;margin-top:60px}
+.foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;color:rgba(241,245,249,.6);font-size:13px}
+.foot-inner .brand-name{color:var(--cream)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">G</div>
+      <div class="brand-name">GooseAI</div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="GooseAI_Capabilities.html">Capabilities</a>
+      <a href="GooseAI_Blog.html" class="active">Blog</a>
+      <a href="mailto:fix@gooseai.dev" style="color:var(--coral)">Forward a rejection</a>
+    </div>
+    <a href="index.html#pricing" class="nav-cta">Engage →</a>
+  </div>
+</nav>
+
+
+<article class="article-page">
+  <div class="crumb"><a href="GooseAI_Blog.html">← Field guide</a> · Business · 3.1.1</div>
+  <span class="gline-num">Guideline 3.1.1 · In-App Purchase</span>
+  <h1>"Your app links to an external paywall." <span class="accent">Guideline 3.1.1, in plain English.</span></h1>
+  <div class="article-meta">12 min read · Updated May 2026 · Most-rejected business-tier guideline</div>
+
+  <p>3.1.1 is the most expensive rule in the App Store. It says: if you sell digital content or subscriptions inside your app, you must use Apple's in-app purchase (IAP) — and you can't link out to a website that processes the payment instead. The rule has subtleties that get even careful developers rejected.</p>
+
+  <h2>What Apple actually says</h2>
+  <div class="apple-quote">
+    <span class="from">Standard rejection notice — Guideline 3.1.1</span>
+    "Your app enables the purchase of digital content for use in the app, but does not use in-app purchase. Apps distributed via the App Store may not provide access to purchased content, subscriptions, or features outside of the app, unless those products were originally purchased outside of the app."
+  </div>
+  <p>Notice the carve-out at the end — "unless originally purchased outside the app". This is the multi-platform escape hatch (the "reader rule"), and it's the thing most developers get wrong.</p>
+
+  <h2>The five most common 3.1.1 triggers</h2>
+  <ol>
+    <li><strong>External "Subscribe" buttons.</strong> Any button, link, or screen that takes the user to a web page where they enter their credit card to subscribe — even if you call it "Manage Subscription" or "Web Plans".</li>
+    <li><strong>"Sign in to claim premium" flows.</strong> If a user can log in inside your app and unlock paid features that weren't purchased through IAP, that's 3.1.1 regardless of where the original purchase happened.</li>
+    <li><strong>Free trial bypass via web.</strong> Offering a 30-day free trial only available by signing up on your website. Apple wants the trial inside the app, using StoreKit subscription introductory pricing.</li>
+    <li><strong>Promo codes that unlock content.</strong> A promo-code field in your app that grants premium without going through IAP is treated as bypass.</li>
+    <li><strong>Crypto / token payments.</strong> Any non-IAP digital-goods payment, including crypto, gift cards purchased on-platform, or third-party processors like Stripe Checkout inside an in-app WebView.</li>
+  </ol>
+
+  <h2>The reader-rule exception (when external links are fine)</h2>
+  <p>If your app is a "reader" app (Spotify, Netflix, Kindle, Adobe — content the user originally purchased somewhere else), Apple permits a single, properly registered external link to your account-management page. You must:</p>
+  <ul>
+    <li>Register as a reader app through App Store Connect.</li>
+    <li>Show Apple's mandatory disclosure modal before opening the link.</li>
+    <li>Pass the App Store's Reader entitlement review (separate from app review).</li>
+  </ul>
+  <p>If you haven't filed for the entitlement, the external link will trigger 3.1.1, even if your app is genuinely a reader.</p>
+
+  <h2>How to fix a 3.1.1 rejection</h2>
+  <ol>
+    <li><strong>Find the offending surface.</strong> Apple's rejection email usually cites a specific screen number (e.g., "screen 4 of your onboarding"). Open that screen and identify the button, link, or text that mentions an external purchase.</li>
+    <li><strong>Choose your remedy.</strong> Three options: (a) remove the link entirely from iOS builds, (b) replace it with a StoreKit 2 in-app purchase flow, or (c) gate it behind a platform check and only show on macOS/web.</li>
+    <li><strong>Update screenshots.</strong> If your App Store listing screenshots show the offending screen, update them. Reviewers check.</li>
+    <li><strong>Resubmit with a detailed Resolution Center note.</strong> Tell App Review exactly what you changed, where it was, and that the new build (e.g., v3.4.2) routes 100% of subscriptions through IAP. Attach a 10-second screen recording if you can.</li>
+  </ol>
+
+  <h3>Appeal-letter template</h3>
+  <div class="appeal-box">
+    <span class="label">Copy &amp; adapt</span>
+    "Hello App Review team, thank you for the detailed feedback on Guideline 3.1.1. We have removed the external subscription link from the iOS onboarding flow on screen 4 and replaced it with our in-app purchase flow using StoreKit 2. The new build (vX.Y.Z) routes 100% of subscription purchases through Apple's IAP system, and we have updated our App Store screenshots to reflect the new flow. Attached: (1) annotated before/after screenshots of screen 4, (2) a 12-second screen recording of the new IAP flow, (3) a list of all <code class='inline'>openURL()</code> calls remaining in the iOS build, none of which route to paid digital content. Please let us know if you need anything further. Thanks for your time."
+  </div>
+
+  <div class="tip-box">
+    <span class="label">Prevention · The Goose tip</span>
+    <h4>Add a CI scan for external paywall links.</h4>
+    <p>Before every submission, run a static scan of <code class='inline' style="background:rgba(255,255,255,.1);border-color:transparent;color:var(--cream)">openURL()</code>, <code class='inline' style="background:rgba(255,255,255,.1);border-color:transparent;color:var(--cream)">SFSafariViewController</code>, and any in-app WebViews against a known-bad-domain list (your billing portal, Stripe, PayPal, etc.). Catches 87% of 3.1.1 risk before submission.</p>
+    <a href="index.html" class="btn">See how GooseAI handles 3.1.1 →</a>
+  </div>
+
+  <h2>What about apps with both subscriptions and one-time purchases?</h2>
+  <p>You can mix IAP-managed subscriptions with non-monetized features. The rule is binary on each item: if the user pays digital money to unlock something, that something must be sold through IAP. Hardware purchases, physical goods, in-person services — none of those trigger 3.1.1.</p>
+
+  <h2>Bottom line</h2>
+  <p>3.1.1 is solvable in two days for most apps if the offending surface is a single external link. Multi-screen integrations (cross-platform account portals, web onboarding wizards, etc.) usually need a week of engineering plus an entitlement filing. Either way, the reviewer is looking for one thing: a clear, single-line statement of what changed and where. Get that right and the resubmission clears.</p>
+
+  <div class="article-cta">
+    <h3>Hit by 3.1.1? <span class="accent">Forward it to Goose.</span></h3>
+    <p>Lock-On tier: human-in-the-loop diagnosis + fix + appeal in 2 days. $100 launch ($200 actual).</p>
+    <a href="mailto:fix@gooseai.dev?subject=3.1.1%20Rejection" class="btn">Forward a rejection →</a>
+  </div>
+
+  <div class="related">
+    <h4>Related playbooks</h4>
+    <a href="GooseAI_Blog_g511.html"><span class="tag">5.1.1</span> ITMS-91053 auto-reject: the Privacy Manifest checklist</a>
+    <a href="GooseAI_Blog_g43.html"><span class="tag">4.3</span> Spam: surviving the AI-clone dragnet</a>
+  </div>
+</article>
+
+
+<footer>
+  <div class="foot-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">G</div>
+      <div class="brand-name">GooseAI</div>
+    </a>
+    <span>© 2026 GooseAI — a QApilot squadron. Your AI wingman for App Store rejections.</span>
+    <a href="mailto:fix@gooseai.dev" style="color:var(--coral);font-weight:600">fix@gooseai.dev</a>
+  </div>
+</footer>
+
+</body>
+</html>
