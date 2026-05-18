@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Guideline 4.3 — Design Spam | GooseAI</title>
+<meta name="description" content="4.3 is the most subjective rejection on the App Store. Why AI-generated content apps now hit it daily, and the differentiation playbook that holds up to reviewer scrutiny." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F2EEE6; --cream-2:#EEE8DC; --paper:#FFFFFF;
+  --coffee:#3A2A21; --coffee-2:#2A1D16; --ink:#2A1D16;
+  --mute:#6B5C50; --line:#E2DCD0;
+  --coral:#EE6B3D; --coral-2:#E55A2B; --coral-soft:#FFE7DA;
+  --radius:14px; --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(242,238,230,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:34px;height:34px;border-radius:8px;background:var(--coral);color:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.brand-name{font-weight:800;font-size:17px;color:var(--coffee)}
+.nav-links{display:flex;gap:30px;color:var(--mute);font-size:14px;font-weight:500}
+.nav-links a.active{color:var(--coffee)}
+.nav-links a:hover{color:var(--coffee)}
+.nav-cta{background:var(--coral);color:#fff;padding:11px 22px;border-radius:999px;font-weight:600;font-size:14px}
+
+/* Article */
+.article-page{max-width:760px;margin:0 auto;padding:48px 28px 80px}
+.crumb{font-size:12px;color:var(--mute);margin-bottom:16px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.crumb a{color:var(--coral);font-weight:700}
+.gline-num{display:inline-block;background:var(--coral-soft);color:var(--coral);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.05em;margin-bottom:16px}
+.article-page h1{font-size:clamp(30px,4vw,46px);line-height:1.1;letter-spacing:-.02em;font-weight:800;margin-bottom:20px;color:var(--coffee)}
+.article-page h1 .accent{font-family:'Fraunces',serif;font-style:italic;color:var(--coral);font-weight:400}
+.article-meta{color:var(--mute);font-size:13px;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.article-page h2{font-size:24px;font-weight:800;color:var(--coffee);margin:40px 0 12px;letter-spacing:-.01em}
+.article-page h3{font-size:18px;font-weight:700;color:var(--coffee);margin:28px 0 10px}
+.article-page p{color:var(--coffee);font-size:16px;line-height:1.7;margin-bottom:14px}
+.article-page ul,.article-page ol{margin:0 0 16px 20px;color:var(--coffee)}
+.article-page li{font-size:16px;line-height:1.7;margin-bottom:6px}
+.article-page strong{color:var(--coffee);font-weight:700}
+.article-page em{font-style:italic}
+.apple-quote{background:#fff;border-left:4px solid var(--coral);border-radius:0 12px 12px 0;padding:20px 24px;margin:24px 0;font-family:'Cambria',serif;font-style:italic;color:var(--coffee);font-size:15px;line-height:1.7;box-shadow:0 2px 8px rgba(58,42,33,.04)}
+.apple-quote .from{font-family:'Inter',sans-serif;font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:700;display:block;margin-bottom:10px}
+.appeal-box{background:var(--cream-2);border-radius:12px;padding:24px;margin:24px 0;font-family:'Cambria',serif;font-style:italic;color:var(--coffee);font-size:14px;line-height:1.7}
+.appeal-box .label{font-family:'Inter',sans-serif;font-style:normal;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:700;display:block;margin-bottom:12px}
+.tip-box{background:var(--coffee);color:var(--cream);border-radius:12px;padding:24px;margin:32px 0}
+.tip-box .label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--coral);font-weight:700;display:block;margin-bottom:10px}
+.tip-box h4{font-size:17px;font-weight:700;color:var(--cream);margin-bottom:8px}
+.tip-box p{color:rgba(238,232,220,.85);font-size:14px;line-height:1.6;margin-bottom:8px}
+.tip-box .btn{display:inline-block;margin-top:12px;background:var(--coral);color:#fff;padding:10px 20px;border-radius:999px;font-weight:600;font-size:13px;font-family:'Inter',sans-serif;font-style:normal}
+.article-cta{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:28px;margin-top:48px;text-align:center}
+.article-cta h3{font-size:20px;font-weight:800;color:var(--coffee);margin-bottom:6px}
+.article-cta h3 .accent{font-family:'Fraunces',serif;font-style:italic;color:var(--coral);font-weight:400}
+.article-cta p{color:var(--mute);font-size:14px;margin-bottom:18px}
+.article-cta .btn{background:var(--coral);color:#fff;padding:14px 26px;border-radius:999px;font-weight:600;font-size:14px;display:inline-block}
+.related{margin-top:48px;padding-top:32px;border-top:1px solid var(--line)}
+.related h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:700;margin-bottom:14px}
+.related a{display:block;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:8px;color:var(--coffee);font-weight:600;font-size:14px;transition:border-color .15s ease}
+.related a:hover{border-color:var(--coral)}
+.related a .tag{display:inline-block;background:var(--coral-soft);color:var(--coral);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:999px;margin-right:8px;vertical-align:middle}
+code.inline{background:var(--cream-2);color:var(--coffee);padding:1px 6px;border-radius:4px;font-family:Monaco,Consolas,monospace;font-size:13px;border:1px solid var(--line)}
+
+/* Footer */
+footer{background:var(--coffee-2);color:var(--cream);padding:48px 28px 32px;margin-top:60px}
+.foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;color:rgba(238,232,220,.6);font-size:13px}
+.foot-inner .brand-name{color:var(--cream)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">G</div>
+      <div class="brand-name">GooseAI</div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="GooseAI_Capabilities.html">Capabilities</a>
+      <a href="GooseAI_Blog.html" class="active">Blog</a>
+      <a href="mailto:fix@gooseai.dev" style="color:var(--coral)">Forward a rejection</a>
+    </div>
+    <a href="index.html#pricing" class="nav-cta">Engage →</a>
+  </div>
+</nav>
+
+
+<article class="article-page">
+  <div class="crumb"><a href="GooseAI_Blog.html">← Field guide</a> · Design · 4.3</div>
+  <span class="gline-num">Guideline 4.3 · Design Spam</span>
+  <h1>"Your app appears similar to others." <span class="accent">Surviving the 4.3 AI-clone dragnet.</span></h1>
+  <div class="article-meta">10 min read · Updated May 2026 · Most-subjective design rejection</div>
+
+  <p>4.3 has tripled in volume since 2024. Apple's reviewers are using it as a catch-all to ground AI-generated content apps, templated affirmations/journals/habit-trackers, and anything that looks like it could have been built by another developer in a weekend. It is the most subjective rejection in the App Store, and there is no formal appeal mechanism — only resubmission with stronger differentiation.</p>
+
+  <h2>What Apple actually says</h2>
+  <div class="apple-quote">
+    <span class="from">Standard rejection notice — Guideline 4.3</span>
+    "Your app duplicates the content and functionality of other apps in the App Store. Submitting multiple apps with similar content or functionality may be considered a form of spam. To resolve this issue, we encourage you to review your concept and submit a unique app with distinct content and functionality."
+  </div>
+  <p>The phrase "duplicates the content and functionality" is doing a lot of work here. Apple doesn't tell you which apps yours duplicates, which features count, or how much differentiation is enough. That asymmetry is the whole problem with 4.3.</p>
+
+  <h2>Why 4.3 rejections have tripled since 2024</h2>
+  <ul>
+    <li><strong>AI tools collapsed build cost.</strong> Cursor and Claude Code make it trivial to ship a "Daily Affirmations" or "AI Bedtime Stories" app in a weekend. Apple sees the resulting submission flood as spam by definition.</li>
+    <li><strong>Templated app studios.</strong> Studios shipping 20-30 similar apps under different brand names trigger 4.3 even when each individual app is well-built.</li>
+    <li><strong>Same-content-different-skin clones.</strong> Apps that share an ASO playbook (same keywords, similar screenshots, similar paywall) get flagged as a portfolio even when the developers are unrelated.</li>
+    <li><strong>The 4.3(b) sub-clause.</strong> "Submitting multiple apps where each one is essentially the same" is being interpreted aggressively against single developers with portfolio strategies.</li>
+  </ul>
+
+  <h2>The five-step 4.3 differentiation checklist</h2>
+  <p>This is what holds up to reviewer scrutiny. Not all five are required, but you need at least three:</p>
+  <ol>
+    <li><strong>Distinct core mechanic.</strong> Not just a different theme or color palette — a different user interaction. If your affirmations app is "swipe through cards", at least one differentiated competitor needs to use a different primary interaction (tap-to-reveal, search-based, conversational).</li>
+    <li><strong>Original content, not LLM-templated.</strong> Apple's reviewers can spot LLM-generated affirmations within seconds. If your content is AI-assisted, mix in 30%+ original human-written entries and credit them.</li>
+    <li><strong>Unique data layer.</strong> User-generated content, social graph, scraped community data, integration with a service the app actually depends on (Strava, Apple Health, calendar). Static AI content fails this test.</li>
+    <li><strong>Distinct monetization.</strong> If everyone in your category charges $9.99/month with a 3-day trial, charge differently — even if the price is the same. One-time purchase, lifetime, freemium with a unique premium feature.</li>
+    <li><strong>Screenshots that don't look like everyone else's.</strong> ASO templates from Sensor Tower or similar create same-screenshot syndrome. Custom screenshots with your actual brand colors and flow win.</li>
+  </ol>
+
+  <h2>How to fix a 4.3 rejection</h2>
+  <ol>
+    <li><strong>Don't argue. Differentiate.</strong> 4.3 appeals almost never win on argument alone. The appeal must point to specific changes you've made, not reasons you should be exempt.</li>
+    <li><strong>Pick two of the five differentiators above.</strong> Implement them in the next build. Ideally one is a UX change (visible to the reviewer immediately) and one is a structural change (content, data, monetization).</li>
+    <li><strong>Update screenshots and description.</strong> Lead with what's new. "Now with [X unique feature]" in the App Store description, and the first screenshot showing the differentiator.</li>
+    <li><strong>Resubmit with a Resolution Center note.</strong> Cite the specific changes. "We have added [unique feature], which is not present in [category]." Don't name competitors directly — describe the category.</li>
+  </ol>
+
+  <h3>Appeal-letter template</h3>
+  <div class="appeal-box">
+    <span class="label">Copy &amp; adapt</span>
+    "Hello App Review team, thank you for the feedback on Guideline 4.3. We have made substantive changes to differentiate our app from others in the [category] category. Specifically: (1) we have added [unique mechanic — e.g., a conversational onboarding that adapts based on the user's stated goals], which is not present in other apps in this category; (2) we have replaced the previous templated content library with [N] hours of original human-authored entries, credited per-entry; (3) we have changed our pricing model from monthly subscription to a one-time purchase with optional premium add-ons, differentiating our business model. Attached: before/after screenshots, a 30-second screen recording of the new onboarding, and a public-facing changelog post. We believe the resubmission represents a genuinely distinct offering. Thank you for your time."
+  </div>
+
+  <div class="tip-box">
+    <span class="label">Prevention · The Goose tip</span>
+    <h4>Before you ship: run the ASO twin scan.</h4>
+    <p>Pull the top 20 apps for your primary keyword. If three or more share your color palette, your first-screenshot layout, your subscription price, AND your core mechanic — you're a 4.3 risk regardless of how good your content is. Change at least two before submitting.</p>
+    <a href="index.html" class="btn">See how GooseAI flags 4.3 risk →</a>
+  </div>
+
+  <h2>What about portfolio studios?</h2>
+  <p>If you're publishing multiple apps under one developer account, the rule of thumb is: each app must read as a distinct product to a reviewer spending 90 seconds on it. Shared backend infrastructure is fine. Shared UI templates are NOT fine. Shared brand voice is fine if each app has a distinct theme. Shared monetization patterns are tolerated up to a point — Apple watches for studios where 5+ apps share the exact subscription paywall design.</p>
+
+  <h2>Bottom line</h2>
+  <p>4.3 is the rejection most likely to permanently kill a submission strategy if you don't respect it. The fix is structural, not cosmetic. Plan for 1-2 weeks of differentiation work after a 4.3 rejection, not a quick screenshot swap. And if Apple cites 4.3 twice on the same app, take the second one as a signal that the category itself may be saturated to a point where a new submission isn't worth the engineering investment.</p>
+
+  <div class="article-cta">
+    <h3>Got hit by 4.3? <span class="accent">Tell Goose.</span></h3>
+    <p>4.3 needs human-in-the-loop review. Lock-On tier ($100 launch) includes a competitive ASO scan and a differentiation playbook tuned for your specific category.</p>
+    <a href="mailto:fix@gooseai.dev?subject=4.3%20Rejection" class="btn">Forward a rejection →</a>
+  </div>
+
+  <div class="related">
+    <h4>Related playbooks</h4>
+    <a href="GooseAI_Blog_g311.html"><span class="tag">3.1.1</span> External paywall and the IAP requirement</a>
+    <a href="GooseAI_Blog_g511.html"><span class="tag">5.1.1</span> Privacy Manifest auto-rejects (ITMS-91053)</a>
+  </div>
+</article>
+
+
+<footer>
+  <div class="foot-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">G</div>
+      <div class="brand-name">GooseAI</div>
+    </a>
+    <span>© 2026 GooseAI — a QApilot squadron. Your AI wingman for App Store rejections.</span>
+    <a href="mailto:fix@gooseai.dev" style="color:var(--coral);font-weight:600">fix@gooseai.dev</a>
+  </div>
+</footer>
+
+</body>
+</html>
