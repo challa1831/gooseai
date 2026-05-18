@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>App Store Review Guidelines — Field Guide | GooseAI</title>
+<meta name="description" content="Plain-English index of every Apple App Store Review Guideline subsection — Safety, Performance, Business, Design, Legal — with the common rejection triggers under each. Maintained by GooseAI." />
+<link rel="canonical" href="./index.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,400;1,500;1,600&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F2EEE6; --cream-2:#EEE8DC; --paper:#FFFFFF;
+  --coffee:#3A2A21; --coffee-2:#2A1D16; --ink:#2A1D16;
+  --mute:#6B5C50; --line:#E2DCD0;
+  --coral:#EE6B3D; --coral-2:#E55A2B; --coral-soft:#FFE7DA;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(242,238,230,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{width:34px;height:34px;border-radius:8px;background:var(--coral);color:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.brand-name{font-weight:800;font-size:17px;color:var(--coffee)}
+.nav-cta{background:var(--coral);color:#fff;padding:11px 22px;border-radius:999px;font-weight:600;font-size:14px}
+
+.hero{position:relative;padding:80px 28px 60px;text-align:center;border-bottom:1px solid var(--line);overflow:hidden}
+.hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:2}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--coral);font-weight:700;display:block;margin-bottom:14px}
+h1{font-size:clamp(40px,5vw,60px);line-height:1.05;letter-spacing:-.02em;font-weight:800;margin-bottom:18px;color:var(--coffee)}
+h1 .accent{font-family:'Fraunces',serif;font-style:italic;color:var(--coral);font-weight:400}
+.hero-sub{color:var(--mute);font-size:17px;line-height:1.65;max-width:62ch;margin:0 auto}
+
+.plane-track{position:absolute;inset:0;pointer-events:none;z-index:1}
+.plane{position:absolute;top:60px;left:-80px;animation:fly 16s linear infinite;will-change:transform}
+.plane svg{display:block;filter:drop-shadow(0 4px 10px rgba(238,107,61,.25))}
+.trail{position:absolute;top:86px;left:-80px;width:80px;height:2px;border-top:2px dashed var(--coral);opacity:.35;animation:trail 16s linear infinite}
+@keyframes fly{
+  0%{transform:translate3d(0,0,0) rotate(0)}
+  25%{transform:translate3d(30vw,-18px,0) rotate(-5deg)}
+  50%{transform:translate3d(55vw,10px,0) rotate(3deg)}
+  75%{transform:translate3d(80vw,-8px,0) rotate(-2deg)}
+  100%{transform:translate3d(112vw,4px,0) rotate(2deg)}
+}
+@keyframes trail{
+  0%{transform:translateX(0);width:0}
+  10%{width:80px}
+  100%{transform:translateX(112vw);width:80px;opacity:0}
+}
+@media (prefers-reduced-motion: reduce){
+  .plane,.trail{animation:none;display:none}
+}
+
+main{padding:56px 28px 80px}
+.main-inner{max-width:var(--maxw);margin:0 auto}
+.section{margin-bottom:48px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.section-head h2{font-size:24px;font-weight:800;color:var(--coffee);letter-spacing:-.01em}
+.section-head h2 .num{color:var(--coral);margin-right:8px;font-family:'Fraunces',serif;font-style:italic;font-weight:500}
+.section-head .meta{color:var(--mute);font-size:13px}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:980px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.cards{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px;min-height:170px;transition:transform .2s ease,border-color .2s ease;opacity:0;transform:translateY(12px)}
+.card.in{opacity:1;transform:translateY(0)}
+.card:hover{transform:translateY(-3px);border-color:var(--coral)}
+.card .tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);font-weight:700;align-self:flex-start;background:var(--coral-soft);padding:4px 10px;border-radius:999px}
+.card h3{font-size:16px;font-weight:700;color:var(--coffee);line-height:1.3;letter-spacing:-.01em}
+.card p{color:var(--mute);font-size:13px;line-height:1.55;flex:1}
+.card .read{color:var(--coral);font-weight:600;font-size:13px}
+.card .read::after{content:" →";transition:transform .15s ease}
+.card:hover .read::after{margin-left:4px}
+
+footer{background:var(--coffee-2);color:var(--cream);padding:42px 28px 28px;margin-top:48px}
+.foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;color:rgba(238,232,220,.6);font-size:13px}
+.foot-inner .brand-name{color:var(--cream)}
+.foot-inner a{color:var(--coral)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="./index.html" class="brand">
+      <div class="brand-mark">G</div>
+      <div class="brand-name">GooseAI</div>
+    </a>
+    <a href="https://qapilot.io" class="nav-cta">Engage →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="plane-track" aria-hidden="true">
+    <div class="trail"></div>
+    <div class="plane">
+      <svg width="40" height="40" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 18 L33 6 L24 33 L19 22 Z" fill="#EE6B3D"/>
+        <path d="M19 22 L33 6 L14 19 Z" fill="#E55A2B"/>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-inner">
+    <span class="eyebrow">The Field Guide</span>
+    <h1>Apple App Store rejections, <span class="accent">in plain English.</span></h1>
+    <p class="hero-sub">All 27 subsections of Apple's App Store Review Guidelines, decoded — sub-rules, the rejection triggers that actually fire under each, and the fix to ship before your next submission.</p>
+  </div>
+</header>
+
+<main>
+  <div class="main-inner">
+<section class="section"><div class="section-head"><h2><span class="num">1</span>Safety</h2><div class="meta">7 guidelines</div></div><div class="cards"><a class="card" href="./1-1-objectionable-content.html"><span class="tag">Guideline 1.1</span><h3>Objectionable Content</h3><p>Apps with offensive, defamatory, mean-spirited content — or that capitalise on tragedy — get pulled. GenAI output counts as content.</p><span class="read">Read the breakdown</span></a><a class="card" href="./1-2-user-generated-content.html"><span class="tag">Guideline 1.2</span><h3>User-Generated Content</h3><p>Any app where users post text, photos or video must ship four specific safety controls — or be rejected on sight.</p><span class="read">Read the breakdown</span></a><a class="card" href="./1-3-kids.html"><span class="tag">Guideline 1.3</span><h3>Kids</h3><p>Apps in the Kids Category — or that target children — face the strictest data, ad and analytics rules on the store.</p><span class="read">Read the breakdown</span></a><a class="card" href="./1-4-physical-harm.html"><span class="tag">Guideline 1.4</span><h3>Physical Harm</h3><p>Apps that could cause physical injury — through bad data, drug content, weapons or risky behaviour — get extra scrutiny.</p><span class="read">Read the breakdown</span></a><a class="card" href="./1-5-developer-information.html"><span class="tag">Guideline 1.5</span><h3>Developer Information</h3><p>Users must be able to easily contact you for support, and your business identity on the store must be truthful.</p><span class="read">Read the breakdown</span></a><a class="card" href="./1-6-data-security.html"><span class="tag">Guideline 1.6</span><h3>Data Security</h3><p>Apps must implement industry-standard protection of user data; live vulnerabilities are grounds for immediate removal.</p><span class="read">Read the breakdown</span></a><a class="card" href="./1-7-mischaracterization.html"><span class="tag">Guideline 1.7</span><h3>Mischaracterization</h3><p>Don&#x27;t report a competitor&#x27;s app as objectionable when it isn&#x27;t — and use law enforcement (not App Review) for actual crimes.</p><span class="read">Read the breakdown</span></a></div></section>
+<section class="section"><div class="section-head"><h2><span class="num">2</span>Performance</h2><div class="meta">5 guidelines</div></div><div class="cards"><a class="card" href="./2-1-app-completeness.html"><span class="tag">Guideline 2.1</span><h3>App Completeness</h3><p>Submit the final, on-device-tested build. No placeholders, no broken links, no &#x27;coming soon&#x27; screens.</p><span class="read">Read the breakdown</span></a><a class="card" href="./2-2-beta-testing.html"><span class="tag">Guideline 2.2</span><h3>Beta Testing</h3><p>Demos, betas and trial builds belong in TestFlight, not on the App Store proper.</p><span class="read">Read the breakdown</span></a><a class="card" href="./2-3-accurate-metadata.html"><span class="tag">Guideline 2.3</span><h3>Accurate Metadata</h3><p>The single most common rejection category. Screenshots, title, subtitle, keywords, age rating and “What&#x27;s New” must all reflect reality.</p><span class="read">Read the breakdown</span></a><a class="card" href="./2-4-hardware-compatibility.html"><span class="tag">Guideline 2.4</span><h3>Hardware Compatibility</h3><p>Apps must run on supported hardware, must not drain power or generate heat, and must work with Apple&#x27;s standard inputs.</p><span class="read">Read the breakdown</span></a><a class="card" href="./2-5-software-requirements.html"><span class="tag">Guideline 2.5</span><h3>Software Requirements</h3><p>Use only Apple-approved APIs, ship on the current SDK, and don&#x27;t load executable code at runtime.</p><span class="read">Read the breakdown</span></a></div></section>
+<section class="section"><div class="section-head"><h2><span class="num">3</span>Business</h2><div class="meta">2 guidelines</div></div><div class="cards"><a class="card" href="./3-1-payments.html"><span class="tag">Guideline 3.1</span><h3>Payments</h3><p>Digital goods sold inside the app must use Apple In-App Purchase, with a narrow set of carve-outs. The highest-revenue-risk guideline in the document.</p><span class="read">Read the breakdown</span></a><a class="card" href="./3-2-other-business-model-issues.html"><span class="tag">Guideline 3.2</span><h3>Other Business Model Issues</h3><p>Acceptable and unacceptable business practices around fees, ATT prompts, free trials and what you can require of users.</p><span class="read">Read the breakdown</span></a></div></section>
+<section class="section"><div class="section-head"><h2><span class="num">4</span>Design</h2><div class="meta">7 guidelines</div></div><div class="cards"><a class="card" href="./4-1-copycats.html"><span class="tag">Guideline 4.1</span><h3>Copycats</h3><p>Don&#x27;t clone another developer&#x27;s icon, name, UI or trade dress. Apple has aggressively pulled clone apps since the 2025 enforcement update.</p><span class="read">Read the breakdown</span></a><a class="card" href="./4-2-minimum-functionality.html"><span class="tag">Guideline 4.2</span><h3>Minimum Functionality</h3><p>Apps must do something useful, unique and lasting. Repackaged websites, single-feature gimmicks and AI wrappers without value-add are removed.</p><span class="read">Read the breakdown</span></a><a class="card" href="./4-3-spam.html"><span class="tag">Guideline 4.3</span><h3>Spam</h3><p>Apple limits saturated categories and bans submitting multiple near-identical apps.</p><span class="read">Read the breakdown</span></a><a class="card" href="./4-4-extensions.html"><span class="tag">Guideline 4.4</span><h3>Extensions</h3><p>Keyboards, share extensions, widgets, App Clips, Stickers and Watch extensions each have specific rules.</p><span class="read">Read the breakdown</span></a><a class="card" href="./4-5-apple-sites-and-services.html"><span class="tag">Guideline 4.5</span><h3>Apple Sites and Services</h3><p>Don&#x27;t scrape Apple&#x27;s storefronts, mimic Apple&#x27;s UI, or use Apple Music / Maps / Push in ways that violate the API terms.</p><span class="read">Read the breakdown</span></a><a class="card" href="./4-7-mini-apps-mini-games.html"><span class="tag">Guideline 4.7</span><h3>Mini Apps, Mini Games, Chatbots, Plug-ins, Emulators</h3><p>Hosting third-party software — emulators, mini-game launchers, AI chatbot plugins — only under tightly defined conditions.</p><span class="read">Read the breakdown</span></a><a class="card" href="./4-8-login-services.html"><span class="tag">Guideline 4.8</span><h3>Login Services</h3><p>If you offer third-party sign-in and target consumers, you must offer Sign in with Apple — or an equivalent privacy-preserving option.</p><span class="read">Read the breakdown</span></a></div></section>
+<section class="section"><div class="section-head"><h2><span class="num">5</span>Legal</h2><div class="meta">6 guidelines</div></div><div class="cards"><a class="card" href="./5-1-privacy.html"><span class="tag">Guideline 5.1</span><h3>Privacy</h3><p>The most-cited rejection reason in 2026. Privacy labels, ATT, account deletion and data minimisation all live here.</p><span class="read">Read the breakdown</span></a><a class="card" href="./5-2-intellectual-property.html"><span class="tag">Guideline 5.2</span><h3>Intellectual Property</h3><p>You must own or license everything — code, music, characters, trademarks, public-figure likenesses, and Apple-trademarked terms.</p><span class="read">Read the breakdown</span></a><a class="card" href="./5-3-gaming-gambling-lotteries.html"><span class="tag">Guideline 5.3</span><h3>Gaming, Gambling, and Lotteries</h3><p>Real-money gambling, sweepstakes and contests require licensing, geo-restriction and loot-box odds disclosure.</p><span class="read">Read the breakdown</span></a><a class="card" href="./5-4-vpn-apps.html"><span class="tag">Guideline 5.4</span><h3>VPN Apps</h3><p>Only legal-entity developers may ship VPN apps, and only with the NEVPNManager API. No selling, sharing or using customer data.</p><span class="read">Read the breakdown</span></a><a class="card" href="./5-5-mdm.html"><span class="tag">Guideline 5.5</span><h3>Mobile Device Management</h3><p>MDM apps are tightly scoped — for organisations managing their own devices, not for spying on consumers or partners.</p><span class="read">Read the breakdown</span></a><a class="card" href="./5-6-developer-code-of-conduct.html"><span class="tag">Guideline 5.6</span><h3>Developer Code of Conduct</h3><p>Treat App Review and users with respect. Manipulation, fraud and harassment can terminate your Developer Program account.</p><span class="read">Read the breakdown</span></a></div></section>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div>© 2026 <span class="brand-name">GooseAI</span> &middot; companion field guide to <a href="https://qapilot.io">QApilot</a></div>
+    <div>Last reviewed May 2026</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('in'), i * 40);
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.12});
+  document.querySelectorAll('.card').forEach(c => io.observe(c));
+</script>
+</body>
+</html>
